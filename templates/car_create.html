@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}Добавить машины{% endblock %}
+
+
+
+
+{% block content %}
+    <div>
+    <center>
+        <h1>Добавить новую машины </h1>
+            <form action="/car_create/" method="post", enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-danger">Добавить машину в базу данных</button>
+            </form>
+    </center>
+</div>
+{% endblock %}
+
+
+
+

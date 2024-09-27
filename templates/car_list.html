@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}Главная страниц{% endblock %}
+
+
+
+
+{% block content %}
+
+    <div class="d-flex justify-content-around">
+        {% for i in cars %}
+        <div class="card" style="width: 18rem;">
+            <h1>{{i.title}}</h1>
+            <img src="{{i.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                 <h5 class="card-title">Заголовок карточки</h5>
+                 <p class="card-text">{{i.price}}</p>
+                <a href="/cars/{{i.id}}" class="btn btn-primary">Подробнее</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
+
+

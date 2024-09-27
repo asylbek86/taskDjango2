@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %} машины{% endblock %}
+
+
+
+
+{% block content %}
+    <div>
+    <center>
+        <h1>Обновить машины </h1>
+            <form  method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-danger">Обнавить машину</button>
+            </form>
+    </center>
+</div>
+{% endblock %}
+
+
+
+

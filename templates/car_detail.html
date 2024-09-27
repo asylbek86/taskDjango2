@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}Детальная страница{% endblock %}
+
+
+
+
+{% block content %}
+    <a href="/cars/{{car_detail.id}}/update/"><button>Обновить машины</button></a>
+    <a href="/cars/{{car_detail.id}}/delete/comment/"><button>Удалить машины</button></a>
+    <a href="/cars/{{car_detail.id}}/comment/"><button>Коментарии</button></a>
+    <center class="p-1">
+        <h1>{{car_detail.title}}</h1>
+        <p class="w-75 fs-3">{{car_detail.description}}</p>
+        <iframe src="{{car_detail.video}}" ></iframe>
+        <table class="table table-bordered border-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Текст</th>
+                    <th scope="col">Рейтинг</th>
+                    <th scope="col">Дата создание</th>
+                </tr>
+                {% for j in car_detail.comment_object.all %}
+                <tr>
+                    <td>{{j.text}}</td>
+                    <td>{{j.rate_stars}}</td>
+                    <td>{{j.created_date}}</td>
+                </tr>
+                {% endfor %}
+            </thead>
+        </table>
+    </center>
+{% endblock %}
+
+
+
+
