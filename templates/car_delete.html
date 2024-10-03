@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Удалить машины{% endblock %}
+
+
+
+
+{% block content %}
+    <div>
+    <center>
+        <h1>Добавить новую машины </h1>
+            <form  method="post">
+                {% csrf_token %}
+                <h1>ВЫ уверены что хотите удалить</h1>
+                <button type="submit" class="btn btn-danger">Да</button>
+                <button type="submit" class="btn btn-danger"><a href="/cars/">Нет</a></button>
+            </form>
+    </center>
+</div>
+{% endblock %}
+
+
+
+

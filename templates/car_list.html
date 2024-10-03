@@ -8,7 +8,7 @@
 {% block content %}
 
     <div class="d-flex justify-content-around">
-        {% for i in cars %}
+        {% for i in object_list %}
         <div class="card" style="width: 18rem;">
             <h1>{{i.title}}</h1>
             <img src="{{i.image.url}}" class="card-img-top" alt="...">
